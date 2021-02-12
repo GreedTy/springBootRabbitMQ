@@ -12,11 +12,9 @@ public class ScheduleConfig {
     @Value("${TEST.SCHEDULE}")
     private String scheduleString;
 
-    Logger logger = LoggerFactory.getLogger(getClass());
-
-    @Scheduled(fixedRate = 18000, initialDelay = 10000)
+    @Scheduled(fixedRate = 10000, initialDelay = 1000)
     public void schedulePrint() {
-        logger.debug("{}-{}",System.currentTimeMillis(), scheduleString);
+        System.out.println(scheduleString);
     }
 
 }
