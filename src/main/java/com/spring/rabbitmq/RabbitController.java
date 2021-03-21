@@ -15,8 +15,8 @@ public class RabbitController {
     public RabbitMQSender rabbitMQSender;
 
     @PostMapping("/message")
-    public void sender() {
-        logger.debug("test123");
-        rabbitMQSender.sendRabbitMQ("test", "test");
+    public String sender() {
+        rabbitMQSender.sendRabbitMQ("TEST", "hi");
+        return "hello";
     }
 }
